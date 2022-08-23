@@ -1,20 +1,20 @@
 <template>
   <div class="app">
+    <div class="canvas-warp">
+      <canvas
+        width="400"
+        height="400"
+        id="canvas"
+      ></canvas>
+    </div>
+
     <button
+      style="margin-top: 20px"
       class="button"
       @click="handleExportClick"
     >
       制作月饼
     </button>
-
-    <div style="margin-top: 20px">
-      <canvas
-        width="400"
-        height="400"
-        id="canvas"
-        style="border: 1px solid #ccc"
-      ></canvas>
-    </div>
   </div>
 </template>
 
@@ -90,4 +90,35 @@ export default {
 
 <style lang="less"></style>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.app {
+  text-align: center;
+}
+
+.canvas-warp {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* 手机端隐藏效果*/
+@media only screen and (max-width: 768px) {
+  .app {
+    padding: 0 8px;
+  }
+
+  .button {
+    width: 80%;
+    padding: 20px 0;
+    font-size: 1.5rem;
+  }
+
+  .canvas-warp{
+    padding: 10px;
+  }
+}
+</style>
